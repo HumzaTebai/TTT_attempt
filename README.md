@@ -4,7 +4,7 @@ A simple Tic Tac Toe game built in C++ during my learning journey.
 
 Context
 
-Hi, I’m Hamza—a 40-year-old senior sound designer who started learning C++ just 51 days ago. 
+Hi, I’m Humza—a 40-year-old senior sound designer who started learning C++ just 51 days ago. 
 This project is my way of applying what I’ve learned so far while exploring how programmers think and solve problems. I’d love your feedback and suggestions to help me improve and learn more about coding practices.
 
 Please do not be surprised if you find something completely stupid, I gave it my best with whatever I know now. Surely I will refactor this in much better ways when I learn more. 
