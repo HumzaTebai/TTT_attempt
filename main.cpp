@@ -65,37 +65,39 @@ int main() {
         
         char currentPlayer = user1choice;
         
-        while (moves < 9) {
-            
-            cout << "\nPlayer " << (currentPlayer == user1choice ? "1" : "2");
-            
-            if (currentPlayer == user1choice) {
-                
-                xO(user1choice, usercorrection, user2choice, r, c, grid, moves);
-            } else {
-                oX(user1choice, usercorrection, user2choice, r, c, grid, moves);
-            }
-            moves++;
-            showGrid(grid);
-            
-            
-            if (moves >= 5) {
-                
-                wincheck(grid, user1choice, user2choice, moves);
-            }
-            if (moves == 9) {
-                
-                cout << "\nIt is a Draw! No one wins!";
-                break;
-                
-            }
-            
-            currentPlayer =(currentPlayer ==user1choice) ? user2choice : user1choice;
-            
-        }
+        bool gameOver = false; // added bool here for game over check.
+        
+        while (moves < 9 && !gameOver) {
+               cout << "\nPlayer " << (currentPlayer == user1choice ? "1" : "2") << ":\n";
+
+               if (currentPlayer == user1choice) {
+                   xO(user1choice, usercorrection, user2choice, r, c, grid, moves);
+               } else {
+                   oX(user1choice, usercorrection, user2choice, r, c, grid, moves);
+               }
+
+               moves++;
+               showGrid(grid);
+
+               // Check for a winner
+               if (moves >= 5) {
+                   gameOver = wincheck(grid, user1choice, user2choice, moves);
+               }
+
+               // Handle draw condition
+               if (moves == 9 && !gameOver) {
+                   cout << "\nIt's a draw! No one wins.\n";
+                   break;
+               }
+
+               // Switch players
+               currentPlayer = (currentPlayer == user1choice) ? user2choice : user1choice;
+           }
+
         
         cout << "\nDo you want to play again? Yes/ No ==> ";
-        cin >> playagain;
+        cin >> ws; // Clear the leading whitespace, maybe it is the problem?
+        getline(cin, playagain); // used getline to make sure the input is captured, maybe spaces are a problem?.
         transform(playagain.begin(), playagain.end(), playagain.begin(), ::tolower);
         cin.ignore();
     }

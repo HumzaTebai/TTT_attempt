@@ -19,6 +19,6 @@ void oX (char u1, char& uc,char u2,  int& r, int& c, vector<vector<char>>& gr, i
 
 void choice (char& p1 ,char& p2);
     
-void wincheck(vector<vector<char>>& t, char a, char b, int& m);
+bool wincheck(const vector<vector<char>>& t, char a, char b, int m);
     
     
