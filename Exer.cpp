@@ -96,7 +96,7 @@ void xO (char u1, char& uc,char u2,  int& r, int& c, vector<vector<char>>& gr, i
     }
     while (gr.at(r).at(c) != '_');
     
-    gr[r][c] = uc;
+    gr.at(r).at(c) = uc;
     //m++removed 
     cout << "\nMoves: " << m << endl;
     
@@ -142,7 +142,7 @@ void oX (char u1, char& uc,char u2,  int& r, int& c,  vector<vector<char>>& gr, 
     while (gr.at(r).at(c) != '_');
     
     gr.at(r).at(c) = uc;
-  // m++ removed
+  // updating m removed
     
     cout << "\nMoves: " << m << endl;
 }
